@@ -1,7 +1,7 @@
 import React from 'react';
 
 type ComSelectPropsType = {
-	list: Array<string>
+	listOption: Array<string>
 }
 
 export const SelectCom = (props: ComSelectPropsType) => {
@@ -12,7 +12,7 @@ export const SelectCom = (props: ComSelectPropsType) => {
 		<div>
 			<select>
 				{
-					props.list.map(str => {
+					props.listOption.map(str => {
 						return <option>str</option>
 					})
 				}

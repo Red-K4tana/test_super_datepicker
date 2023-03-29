@@ -3,12 +3,19 @@ import {SelectionBox} from "../selection_box/Selection_box";
 
 export type RangeDirectionType = 'last' | 'next';
 export type UnitOfTimeType = 'seconds' | 'minutes' | 'hours' | 'days' | 'weeks' | 'months' | 'years';
-
+export type RangeType = {
+	direction: RangeDirectionType
+	unitOfTime: UnitOfTimeType
+	number: number
+};
 
 
 export const MainDatepicker = () => {
-	const [rangeDirection, setRangeDirection] = useState<RangeDirectionType>('last')
-	const [unitOfTime, setUnitOfTime] = useState<UnitOfTimeType>('minutes')
+	const [range, setRange] = useState<RangeType>({
+		direction: 'last',
+		unitOfTime: 'minutes',
+		number: 1,
+	})
 
 	const setRangeHandler = () => {
 		//назначить диапазон с учетом даты
@@ -18,7 +25,7 @@ export const MainDatepicker = () => {
 
 	return (
 		<div>
-			<SelectionBox />
+			<SelectionBox setRangeHandler={setRangeHandler} setRange={setRange} range={range}/>
 		</div>
 	);
 };
