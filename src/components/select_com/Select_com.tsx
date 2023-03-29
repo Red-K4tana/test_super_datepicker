@@ -13,7 +13,7 @@ export const SelectCom = (props: ComSelectPropsType) => {
 			<select>
 				{
 					props.listOption.map(str => {
-						return <option>str</option>
+						return <option key={str}>str</option>
 					})
 				}
 			</select>
