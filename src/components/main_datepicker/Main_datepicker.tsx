@@ -6,7 +6,7 @@ export type UnitOfTimeType = 'seconds' | 'minutes' | 'hours' | 'days' | 'weeks' 
 export type RangeType = {
 	direction: RangeDirectionType
 	unitOfTime: UnitOfTimeType
-	number: number
+	number: string
 };
 
 
@@ -14,7 +14,7 @@ export const MainDatepicker = () => {
 	const [range, setRange] = useState<RangeType>({
 		direction: 'last',
 		unitOfTime: 'minutes',
-		number: 1,
+		number: '1',
 	})
 
 	const setRangeHandler = () => {

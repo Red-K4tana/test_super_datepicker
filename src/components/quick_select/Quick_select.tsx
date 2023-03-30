@@ -19,7 +19,7 @@ export const QuickSelect = (props: QuickSelectPropsType) => {
 	return (
 		<div className={style.quickSelect}>
 			<SelectCom listOption={rangeDirection} defaultValue={props.range.direction}/>
-			<InputNumCom />
+			<InputNumCom defaultValue={props.range.number} />
 			<SelectCom listOption={unitOfTime} defaultValue={props.range.unitOfTime}/>
 			<Button name={'Apply'} callback={props.setRangeHandler} />
 		</div>
