@@ -3,7 +3,7 @@ import {SelectCom} from "../select_com/Select_com";
 import {InputNumCom} from "../input_num_com/InputNumCom";
 import {Button} from "../Button/Button";
 import {RangeType} from "../main_datepicker/Main_datepicker";
-
+import style from './Quick_select.module.css';
 
 type QuickSelectPropsType = {
 	setRangeHandler: () => void
@@ -17,7 +17,7 @@ export const QuickSelect = (props: QuickSelectPropsType) => {
 	const unitOfTime: Array<string> = ['seconds', 'minutes', 'hours', 'days', 'weeks', 'months', 'years']
 
 	return (
-		<div>
+		<div className={style.quickSelect}>
 			<SelectCom listOption={rangeDirection} defaultValue={props.range.direction}/>
 			<InputNumCom />
 			<SelectCom listOption={unitOfTime} defaultValue={props.range.unitOfTime}/>
